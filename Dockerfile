@@ -1,5 +1,9 @@
-FROM n8nio/n8n:1.90.2
+FROM n8nio/n8n
+
+ENV N8N_PORT=5678
+ENV N8N_HOST=0.0.0.0
 
 EXPOSE 5678
 
+ENTRYPOINT ["tini", "--"]
 CMD ["n8n"]
